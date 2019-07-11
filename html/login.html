@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+{ms:include filename=head-file.htm/}
+
+<body style="background: #ffffff;">
+	<div class="header">
+		<div class="containerno">
+			<div class="logo fl">
+				<div class="logo-img">
+					<a href="javascript:;"> <img style="height: 120px" src="{ms:globalskin.url/}/images/logo.png " />
+					</a>
+				</div>
+				<div class="logo-text">
+					<span class="logo-text-ch">中科（淮北）产业技术研究院</span> <br> <span class="logo-text-en">Zhongke
+						(huaibei) industrial
+						technology research institute</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="login-banner">
+		<div class="container">
+			<div class="content-login">
+				<div class="content-login-header">
+					<span class="login-gao fl-gao form-singn-gao-hover" id="dl_gao">登录</span> <span
+						class="login-gao gl-gao form-reg-gao-hover" id="zc_gao">注册</span>
+				</div>
+				<form method="post" action="" name="login" class="form-singn-gao tit-gao" id="dl_form">
+					<br/><input class="login-inp-gao" type="text" name="peopleName" placeholder="请输入账号!" /> <br> <br>
+					     <input class="login-inp-gao" type="password" name="peoplePassword" placeholder="请输入您的密码!" /> <br>
+					<br>
+					<input class="yanzheng-gao" type="text" name="rand_code" />
+					<a href="#" onclick="reImg();">
+						<img src="{ms:global.host/}/code?asd=123" id="loginCode" title="点击刷新验证码"
+							onblur="reimg()"" /> 
+					</a>
+					<br/><br/>
+					<input class=" sign-in-gao" type="button" id="gologin" value="立即登录"><br/>
+
+
+					<a style="float: right;" href="{ms:global.url/}/166/index.html">忘记密码？</a>
+				
+						
+				</form>
+					
+
+				<!-- 注册 -->
+				<form method="post" action="" name="reg" class="form-reg-gao tit-gao" id="zc_form">
+
+					
+					<input class="login-inp-gao" type="text" name="peopleName" placeholder="请输入账号" /> <br>
+					<br>
+					
+					<input class="login-inp-gao" type="text" id="emailIn" name="peopleMail" placeholder="请输入邮箱" /> <br>
+					<br>
+					<input id="hiddenIn" class="login-inp-gao" type="hidden" name="receive" onpropertychange="cop()" oninput="cop()" placeholder="请输入邮箱" />
+					<input class="login-inp-gao" type="password" name="peoplePassword" placeholder="设置密码" /> <br> <br>
+					<!--密码-->
+					<input class="yanzheng-gao" type="text" name="rand_code" id="rand_code" />
+					<a href="#" onclick="reImg();">
+						<img src="{ms:global.host/}/code?asd=123" id="loginCode" title="点击刷新验证码"
+							onblur="reimg()" />
+					</a><br>
+
+					<input class="emailyz-gao" type="text" id="emailInput" name="peopleCode"  placeholder="输入邮箱验证码" />
+				
+					<input class="have-yz" id="yanz" type="button" value="获取验证码" /> <br>
+					<input id="hiddenInput" class="login-inp-gao" type="hidden" name="code" onpropertychange="cop()" oninput="cop()" placeholder="请输入邮箱" />
+				
+				
+					<input class="sign-in-gao" type="button" id="denglu" value="立即注册"> <br>
+
+				</form>
+			</div>
+		</div>
+		<div class="text-gao-singn">
+			<span>欢迎进入中科（淮北）产业技术研究院</span> <br> <br> <span>Welcome
+				to our website</span>
+		</div>
+	</div>
+	<div class="container">
+		<div class="login-footer">
+			<span>友情链接：</span> <a href="http://www.cas.cn">中国科学院</a><a href="http://www.huaibei.gov.cn">淮北市政府</a>
+		</div>
+	</div>
+	<div class="copyright bbot">
+		<div class="bq-gao">
+			<span>Copyright &nbsp;© &nbsp;中科（淮北）产业研究院&nbsp;&nbsp;版权所有</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		window.onbeforeunload = function () {
+			var scrollPos;
+			if (typeof window.pageYOffset != 'undefined') {
+				scrollPos = window.pageYOffset;
+			} else if (typeof document.compatMode != 'undefined'
+				&& document.compatMode != 'BackCompat') {
+				scrollPos = document.documentElement.scrollTop;
+			} else if (typeof document.body != 'undefined') {
+				scrollPos = document.body.scrollTop;
+			}
+			document.cookie = "scrollTop=" + scrollPos; //存储滚动条位置到cookies中
+		}
+
+		window.onload = function () {
+			if (document.cookie.match(/scrollTop=([^;]+)(;|$)/) != null) {
+				var arr = document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
+				document.documentElement.scrollTop = parseInt(arr[1]);
+				document.body.scrollTop = parseInt(arr[1]);
+			}
+		}
+	</script>
+	<script type="text/javascript">
+		var dlGao = document.getElementById("dl_gao");
+		var zcGao = document.getElementById("zc_gao");
+		var dlForm = document.getElementById("dl_form");
+		var zcForm = document.getElementById("zc_form");
+
+		var iImg = document.getElementById("loginCode");
+		dlGao.onclick = function () {
+			dlForm.setAttribute('style', 'display:block');
+			zcForm.setAttribute('style', 'display:none');
+			this.setAttribute('style', 'border-bottom:2px solid #1f317c');
+			zcGao.setAttribute('style', 'border-bottom:none');
+		}
+		zcGao.onclick = function () {
+			zcForm.setAttribute('style', 'display:block');
+			dlForm.setAttribute('style', 'display:none');
+			this.setAttribute('style', 'border-bottom:2px solid #1f317c;');
+			dlGao.setAttribute('style', 'border-bottom:none');
+		}
+		function reImg() {
+			var iImg = document.getElementById("loginCode");
+			iImg.src = "{ms:global.host/}/code" + "?asd=" + Math.random();
+		}
+	</script>
+	<!--登陆 -->
+		<script type="text/javascript">
+			var gologin=document.getElementById('gologin');
+			gologin.onclick= function(){
+				console.log(123456);
+				$.ajax({
+					type: "post",
+					data: $("#dl_form").serialize(),
+					dataType: "json",
+					url: "/ms-mcms/checkLogin.do",
+					success: function (msg) {
+						if (msg.result != true) {
+							alert(msg.resultMsg);
+						} else {
+							alert("登录成功！");
+							window.location.href="{ms:global.host/}/html/1/index.html";
+						}}
+				})
+				
+			}
+		</script>
+
+
+
+	<!-- 注册 -->
+	<script type="text/javascript">
+	
+		var yanz = document.getElementById('yanz');
+		
+		yanz.onclick = function () {
+			console.log(123);
+			/* document.reg.action="/ms-mcms/sendCode.do?type=mail&modelCode=register&isSession=true";
+		document.reg.submit();	 */
+		$.ajax({
+				type: "post",
+				data: $("#zc_form").serialize(),
+				dataType: "json",
+				url: "/ms-mcms/sendCode.do?type=mail&modelCode=register&isSession=true",
+				success: function (msg) {
+					console.log(msg.resultMsg);
+					alert(msg.resultMsg);
+
+				}
+			})
+			}
+
+		var denglu = document.getElementById('denglu');
+		denglu.onclick = function () {
+			console.log(123123);
+		
+				$.ajax({
+					type: "post",
+					data: $("#zc_form").serialize(),
+					dataType: "json",
+					url: "/ms-mcms/checkSendCode.do",
+					success: function (msg) {
+						if (msg.result != true) {
+							console.log(msg.resultMsg)
+							alert(msg.resultMsg);
+						} else {
+							$.ajax({
+								type: "post",
+								data: $("#zc_form").serialize(),
+								dataType: "json",
+								url: "/ms-mcms/register1.do",
+								success: function (msg) {
+									if (msg.result != true) {
+										console.log(msg.resultMsg);
+										alert(msg.resultMsg);
+									} else {
+										alert("注册成功！");
+										window.location.href="{ms:global.host/}/html/1/157/index.html";
+									}
+
+								}
+							})
+							
+						}
+
+					}
+				})
+		}
+	</script>
+	
+	
+	<script>
+	var igam=document.getElementById("emailInput");
+	    igam.onblur=function cop(){
+		var str=document.getElementById("emailInput").value;
+		document.getElementById("hiddenInput").value = str;
+		}
+		console.log(document.getElementById("hiddenInput").value)
+		
+	var igam1=document.getElementById("emailIn");
+	    igam1.onblur=function cop(){
+		var str=document.getElementById("emailIn").value;
+		document.getElementById("hiddenIn").value = str;
+		}
+		console.log(document.getElementById("hiddenIn").value)
+	</script>
+	
+	
+
+</body>
+
+</html>

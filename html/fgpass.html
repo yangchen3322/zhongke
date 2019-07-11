@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+{ms:include filename=head-file.htm/}
+
+<body style="background: #ffffff;">
+	<div class="header">
+		<div class="containerno">
+			<div class="logo fl">
+				<div class="logo-img">
+					<a href="{ms:global.host/}"> <img style="height: 120px" src="{ms:globalskin.url/}/images/logo.png " />
+					</a>
+				</div>
+				<div class="logo-text">
+					<span class="logo-text-ch">中科（淮北）产业技术研究院有限公司</span> <br> <span class="logo-text-en">Zhongke
+						(huaibei) industrial
+						technology research institute</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="login-banner">
+		<div class="container">
+			<div class="content-login">
+				<div class="content-login-header1">
+					<span class="login-pwdgao form-singn-gao-hover">找回密码</span>
+				</div>
+				<!-- 找回密码 -->
+				<form method="post" action="" name="reg" class="tit-gao" id="zhmm">
+					<input  class="login-inp-gao" type="text" name="peopleName" placeholder="请输入账户" /> <br><br>
+					<input id="emailInput" class="login-inp-gao" type="email" name="peopleMail" placeholder="请输入邮箱" /> <br><br>
+					<input id="hiddenInput" class="login-inp-gao" type="hidden" name="receive" onpropertychange="cop()" oninput="cop()" placeholder="请输入邮箱" />
+					<input class="login-inp-gao" type="password" name="peoplePassword" placeholder="设置密码" /> <br> <br>
+					
+					<!--密码-->
+					<input class="yanzheng-gao" type="text"   name="rand_code" id="rand_code" />
+					<a href="#" onclick="reiImg();">
+						<img src="{ms:global.host/}/code?asd=123" id="regCode" title="点击刷新验证码" onblur="reimg()" /> 
+					
+					<input class="emailyz-gao" type="text" name="peopleCode" id="emailIn" placeholder="输入邮箱验证码" />
+					<input class="have-yz1" id="yanz" type="button" value="获取验证码" /> <br>
+					<input id="hiddenIn" class="login-inp-gao" type="hidden" name="code" onpropertychange="cop()" oninput="cop()" placeholder="请输入邮箱" />
+					
+					<label></label>
+					<input class="sign-in-gao" type="button" id="submitReg" value="重置密码"> <br>
+				</form>
+				<div class="tips">
+				  <!-- <p>用户名不能为空</p> -->
+				</div>
+			</div>
+		</div>
+		<div class="text-gao-singn">
+			<span>欢迎进入中科（淮北）产业技术研究院</span> <br> <br> <span>Welcome
+				to our website</span>
+		</div>
+	</div>
+	<div class="container">
+		<div class="login-footer">
+			<span>友情链接：</span> <a href="http://www.cas.cn">中国科学院</a><a href="http://www.huaibei.gov.cn">淮北市政府</a>
+		</div>
+	</div>
+	<div class="copyright bbot">
+		<div class="bq-gao">
+			<span>Copyright &nbsp;© &nbsp;中科（淮北）产业研究院&nbsp;&nbsp;版权所有</span>
+		</div>
+	</div>
+
+
+
+
+	<!-- 注册 -->
+	<script type="text/javascript">
+
+	
+		var yanz =  document.getElementById('yanz');
+		yanz.onclick = function () {
+			console.log(123);
+			
+			$.ajax({
+				type: "post",
+				data: $("#zhmm").serialize(),
+				url: "/ms-mcms/sendCode.do?type=mail&modelCode=resetPassword&isSession=false",
+				success: function (msg) {
+					if (msg.result != true) {
+						console.log(msg.resultMsg);
+						alert(msg.resultMsg);
+						//target.code();
+					} else {
+						console.log("发送成功！");
+						alert("发送成功!");
+					}
+
+				}
+			})
+			}
+
+		var submitReg = document.getElementById('submitReg');
+		submitReg.onclick = function () {
+			console.log(123123);
+			
+			
+			$.ajax({
+				type: "post",
+				data: $("#zhmm").serialize(),
+				url: "/ms-mcms/checkSendCode1.do",
+				success: function (msg) {
+					if (msg.result != true) {
+						alert(msg.resultMsg);
+					} else {
+						$.ajax({
+							type: "post",
+							data: $("#zhmm").serialize(),
+							url: "/ms-mcms/resetPassword1.do",
+							success: function (msg) {
+								if (msg.result != true) {
+									alert(msg.resultMsg);
+									
+								} else {
+									alert("重置成功！");
+									window.location.href="{ms:global.host/}/html/1/157/index.html";
+								}
+
+							}
+						})
+					}
+					}
+					})
+			}
+	</script>
+	<script>
+	var igam=document.getElementById("emailInput");
+	    igam.onblur=function cop(){
+		var str=document.getElementById("emailInput").value;
+		document.getElementById("hiddenInput").value = str;
+		}
+		console.log(document.getElementById("hiddenInput").value)
+
+	var igam1=document.getElementById("emailIn");
+	    igam1.onblur=function cop(){
+		var str=document.getElementById("emailIn").value;
+		document.getElementById("hiddenIn").value = str;
+		}
+		console.log(document.getElementById("hiddenIn").value)
+	
+		
+
+		function reimg(){
+			var reiImg = document.getElementById("regCode");
+			reiImg.src = "{ms:global.host/}/code" + "?asd=" + Math.random();
+		}
+	</script>
+</body>
+
+</html>

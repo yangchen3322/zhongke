@@ -1,0 +1,98 @@
+﻿<!--* 关于我们- */-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+{ms:include filename=head-file.htm/}
+<body>
+  {ms:include filename=head.htm/}
+  <!-- 内页banner -->
+  <div class="s-banner-div">
+    	<img class="s-banner" src="{ms:globalskin.url/}/images/aboutbanner.png" />
+    </div>
+  <!-- /内页banner -->
+  <div class="back-color">
+    <div class="container">
+      <div class="con-left fl">
+        <div class="subcat">
+          <div class="sub-tit">
+            <h3>
+            	{ms:channel type=self typeid=115}
+                	[field.typetitle/]
+              	{/ms:channel}
+			</h3>
+            <span class="ar">Recommend</span>
+          </div>
+          <ul>
+            {ms:channel type=son typeid=115 class=detailMainLeftMenu_cur}
+              <li>
+                <i></i>
+                <a href="[field.typelink/]" class="[field.class/]">[field.typetitle/]</a>
+              </li>
+            {/ms:channel}
+          </ul>
+        </div>
+        <div class="subtac">
+          <p>咨询热线：</p>
+          <strong class="ar">186-0061-8587</strong>
+        </div>
+      </div>
+      <div class="con-right fl con-right-all-gao">
+        <div class="current">
+          <div class="curr-left fl">
+            <h3>研究中心</h3>
+          </div>
+          <div class="curr-right fr">
+            <p>您当前的位置：<a class="home" href="{ms:global.host/}">首页</a>
+              <a href="{ms:global.url/}/99/index.html">
+                {ms:channel type=self typeid=115}
+                  [field.typetitle/]
+                {/ms:channel}
+              </a>
+              <a href="">{ms:field.typetitle/}</a>
+            </p>
+          </div>
+        </div>
+        <div class="page-about">
+          <div class="detail">
+            <p style="text-align: center;"></p>
+            <p><br /></p>
+            <table width="100%" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr class="firstRow">
+                  {ms:channel type=self}
+                    <td colspan="4" class="tabT" style="font-family: 微软雅黑; margin: 0px; padding: 8px; font-size: 24px; line-height: 20px; color: rgb(10, 87, 172); font-weight: bold; border: 1px solid rgb(221, 221, 221); text-align: center;"
+                      height="50">
+                      [field.typetitle/]
+                    </td>
+                  {/ms:channel}
+                </tr>
+                {ms:arclist typeid=115 size=4}
+                  <tr>
+                    <td style="margin: 0px; padding: 8px; border: 1px solid rgb(219, 219, 219); line-height: 200px; text-align: center;" width="313">
+                      <span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">
+                        <img src="{ms:global.host/}[field.litpic/]" alt="" />
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="margin: 0px; padding: 8px; border: 1px solid rgb(219, 219, 219); line-height: 20px; text-align: center;"width="313">
+                      <span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">
+                        [field.title/]
+                      </span>
+                    </td>
+                  </tr>
+                {/ms:arclist}
+              </tbody>
+            </table>
+            <p><br /></p>
+            <p><br /></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hg15"></div>
+  </div>
+  <!-- 页脚 -->
+  {ms:include filename=footer.htm/}
+  <!-- /页脚 -->
+</body>
+</html>

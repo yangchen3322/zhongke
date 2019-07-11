@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+{ms:include filename=head-file.htm/}
+
+<body>
+  {ms:include filename=head.htm/}
+  		<div class="swiper-container">
+	      <div class="swiper-wrapper">
+	        <div class="swiper-slide swiper-lazy" data-background="{ms:globalskin.url/}/images/banner.jpg"
+	          style="width:100%;min-width:1288px;height:400px">
+	          <div class="swiper-lazy-preloader"></div>
+	        </div>
+	        <div class="swiper-slide swiper-lazy" data-background="{ms:globalskin.url/}/images/banner02.jpg"
+	          style="width:100%;min-width:1288px;height:400px;">
+	          <div class="swiper-lazy-preloader"></div>
+	        </div>
+	        <div class="swiper-slide swiper-lazy" data-background="{ms:globalskin.url/}/images/banner03.jpg"
+	          style="width:100%;min-width:1288px;height:400px">
+	          <div class="swiper-lazy-preloader"></div>
+	        </div>
+	      </div>
+	      <div class="swiper-pagination"></div>
+<!-- 	      <div class="swiper-button-prev"></div>
+	      <div class="swiper-button-next"></div> -->
+	    </div>
+  <div class="container plate mt15" id="box1">
+    <!-- 幻灯片 -->
+      <!-- <div class="all_gao" id='box_gao'>
+        <div class="screen_gao">
+            <ul>
+                <li><img src="{ms:globalskin.url/}/images/banner.png" style="width:100%;height:400px" /></li>
+                <li><img src="{ms:globalskin.url/}/images/arrow_35.png" style="width:100%;height:400px" /></li>
+                <li><img src="{ms:globalskin.url/}/images/banner.png" style="width:100%;height:400px" /></li>
+            </ul>
+            <ol>
+                <li class="current"></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+        <div id="arr_gao"><span id="left_gao">&lt;</span><span id="right_gao">&gt;</span></div>
+    </div> -->
+		
+    <!-- /幻灯片 -->
+    <script type="text/javascript">
+       $(function () {
+        var swiper = new Swiper('.swiper-container', {
+          pagination: '.swiper-pagination',
+          paginationClickable: true,
+          nextButton: '.swiper-button-next',
+          prevButton: '.swiper-button-prev',
+          effect: "slide",
+          lazyLoading: true,
+          lazyLoadingInPrevNext: true,
+          lazyLoadingOnTransitionStart: true,
+          preventClicks: false,
+          autoplay: 2000,
+          autoplayDisableOnInteraction: false,
+          direction: "horizontal",
+          mousewheelControl: false,
+          mousewheelReleaseOnEdges: true,
+          keyboardControl: true,
+        });
+      }) 
+
+    </script>
+    <!-- 公司新闻 -->
+    <div class="plate-case fl mb15 plate-white news-index-gao" style="background:#fff;">
+      <div class="title" id="tab_title">
+        <p class="active-tab-gao active-tab-gao-p">行业新闻</p>
+        <p class="active-tab-gao-p">院内新闻</p>
+        <p class="active-tab-gao-p">院内活动</p>
+        <a class="fr tit-more" href="{ms:global.url/}/59/index.html">更多</a>
+      </div>
+      <!-- tab内容 -->
+      <div id="tab_news">
+      <!-- 行业新闻 -->
+      <div class="plate-case-content after selectedGao">
+        {ms:arclist typeid=69 size=3}
+        <span class="platecase-span-gao-index">
+          <img width="100%" src="{ms:global.host/}[field.litpic/]" alt="行业新闻" />
+          <h5 class="platecase-h5-gao-index"><a href="[field.link/]">[field.title/]</a></h5>
+          <span class="news-time-gao">[field.date fmt=yyyy-MM-dd/]</span>
+          <span class="news-jianjie-gao"><a href="[field.link/]">[field.descrip/]</a></span>
+        </span>
+        <br>
+        {/ms:arclist}
+      </div>
+      <!-- 院内新闻 -->
+      <div class="plate-case-content after">
+        {ms:arclist typeid=68 size=3}
+        <span class="platecase-span-gao-index">
+          <img width="100%" src="{ms:global.host/}[field.litpic/]" alt="院内新闻" />
+          <h5 class="platecase-h5-gao-index"><a href="[field.link/]">[field.title/]</a></h5>
+          <span class="news-time-gao">[field.date fmt=yyyy-MM-dd/]</span>
+          <span class="news-jianjie-gao"><a href="[field.link/]">[field.descrip/]</a></span>
+        </span>
+        <br>
+        {/ms:arclist}
+      </div>
+      <!-- 院内活动 -->
+      <div class="plate-case-content after">
+        {ms:arclist typeid=158 size=3}
+        <span class="platecase-span-gao-index">
+          <img width="100%" src="{ms:global.host/}[field.litpic/]" alt="院内新闻" />
+          <h5 class="platecase-h5-gao-index"><a href="[field.link/]">[field.title/]</a></h5>
+          <span class="news-time-gao">[field.date fmt=yyyy-MM-dd/]</span>
+          <span class="news-jianjie-gao"><a href="[field.link/]">[field.descrip/]</a></span>
+        </span>
+        <br>
+        {/ms:arclist}
+      </div>
+      </div>
+    </div>
+    
+    <img class="shijiuda" src="{ms:globalskin.url/}/images/shijiuda.png">
+    
+    <!-- 通知公告 -->
+    <div class="plate-clint mb15 fr plate-white" style="background:#fff;margin-top: 20px;height:422px;">
+      <div class="title">
+        <p class="active-tab-gao">
+          通知公告
+          <!-- <span class="ar">EXPERT</span> -->
+        </p>
+        <a class="fr tit-more" href="{ms:global.url/}/59/70/index.html">更多</a>
+      </div>
+      <div class="news-content-gao">
+        <ul class="wul105">
+          {ms:arclist typeid=70 size=9 class=detailMainLeftMenu_cur}
+          <li>
+            <a href="[field.link/]" class="[field.class/]">[field.title/]</a>
+            <span class="fr">[field.date fmt=yyyy-MM-dd/]</span>
+          </li>
+          {/ms:arclist}
+        </ul>
+      </div>
+    </div>
+    
+    <!-- 产品栏目 -->
+    <div class="plate-product mb15 chanpin-gao-index-all fl plate-white" style="background:#fff;">
+      <div class="title">
+        <p class="active-tab-gao">
+          {ms:channel type=self typeid=106}[field.typetitle/]{/ms:channel}
+          <!-- <div class="find-cat chanpin-gao-i">
+            {ms:channel type=son typeid=106}
+            <a href="[field.typelink/]">[field.typetitle/]</a>
+            {/ms:channel}
+          </div> -->
+        </p>
+        {ms:channel type=self typeid=106}
+        <a class="fr tit-more" href="[field.typelink/]">更多</a>
+        {/ms:channel}
+      </div>
+      <div class="plate-product-content after chanpin-gao-index">
+        <ul class="wul105">
+          {ms:arclist typeid=106 size=3}
+          <li class="img-li-gao-index">
+            <a class="open-layer" href="javascript:;">
+              <img width="214px" height="143px" src="{ms:global.host/}[field.litpic/]" alt="[field.title/]" />
+              <!-- <a href="javascript:;">
+                <div class="mask-gao-index">
+                  <h5>[field.title/]</h5>
+                </div>
+              </a> -->
+            </a>
+            <span class="chanpin-span-tit"><a href="javascript:;">[field.title/]</a></span><br>
+            <span class="chanpin-span-des">[field.descrip/]</span>
+          </li>
+          {/ms:arclist}
+        </ul>
+      </div>
+    </div>
+    
+    <!-- 专家顾问 -->
+    <div class="plate-clint mb15 fr plate-white" style="background:#fff;">
+      <div class="title">
+        <p class="active-tab-gao">
+          专家顾问
+          <!-- <span class="ar">EXPERT</span> -->
+        </p>
+        <a class="fr tit-more" href="{ms:global.url/}/93/95/index.html">更多</a>
+      </div>
+      <div class="plate-clint-content">
+        <ul class="wul105">
+          {ms:arclist typeid=95 size=4}
+          <li>
+            <a target="_self"><img src="{ms:global.host/}[field.litpic/]" alt="" />
+              <h5>[field.title/]</h5>
+            </a>
+          </li>
+          {/ms:arclist}
+        </ul>
+      </div>
+    </div>
+    
+    <!-- 技术转移 -->
+    <div class="plate-about fl mb15 plate-white" style="background:#fff;">
+      <div class="title" id="tab_jishu_title">
+        <p class="active-tab-gao">
+          技术转移
+        </p>
+        <p>
+          合作动态
+        </p>
+        <a class="fr tit-more" href="{ms:global.url/}/159/index.html">更多</a>
+      </div>
+      
+      <div id="tab_jishu">
+      <!-- 技术转移 -->
+      	<div class="jishu-content-index jishu-content-index-active">
+	        <div class="jishu-content-news">
+	          {ms:arclist typeid=160}
+	          <img src="{ms:global.host/}[field.litpic/]" />
+	          <span class="touming-title">[field.fulltitle/]</span>
+	          <h5 class="f18">[field.fulltitle/]</h5>
+	          <div class="intro-text f12">
+	            [field.descrip/]
+	          </div>
+	          {/ms:arclist}
+	        </div>
+      	</div>
+      <!-- 合作动态 -->
+      	<div class="jishu-content-index">
+	        <div class="jishu-content-news">
+	          {ms:arclist typeid=97}
+	          <img src="{ms:global.host/}[field.litpic/]" />
+	          <span class="touming-title">[field.fulltitle/]</span>
+	          <h5 class="f18">[field.fulltitle/]</h5>
+	          <div class="intro-text f12">
+	            [field.descrip/]
+	          </div>
+	          {/ms:arclist}
+	        </div>
+      	</div>
+      </div>
+    </div>
+    <!-- 服务专栏 -->
+    <div class="plate-contact fr mb15 plate-white" style="background:#fff;">
+	    <div class="title">
+	        <p class="active-tab-gao">
+	          服务专栏
+	        </p>
+        </div>
+      <div class="plate-contact-content after">
+        <!-- <img src="{ms:globalskin.url/}/images/58d3383ecae4e_1.jpg" class="mb10" alt="联系我们" /> -->
+        <div class="button-gao-index">
+          <div class="wj-gao-index">
+            <a class="email-gao" href="http://172.29.209.175/oa/?m=login"  ><img src="{ms:globalskin.url/}/images/OA.png"><span>OA 系统</span></a>
+            <a class="email-gao fr"><img src="{ms:globalskin.url/}/images/mail.png"><span>邮箱</span></a>
+          </div>
+        </div>
+        <div class="lx-gao-index">
+	{ms:arclist typeid=165}
+	<p>[field.content/]</p>
+	{/ms:arclist}
+          		<span class="erweima">
+			        <img src="{ms:globalskin.url/}/images/qrcode.png" alt="关注我们" />
+			        <h5>扫一扫关注我们</h5>
+		        </span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 友情链接 -->
+    <div class="index-link-gao mb15 plate-white">
+    	<div class="title">
+	        <p class="active-tab-gao">
+	          友情链接
+	        </p>
+        </div>
+        <div class="fl-link-gao">
+        	<a href="http://www.cas.cn/"><img src="{ms:globalskin.url/}/images/chaolianjie_10.jpg"></a>
+	        <a href="http://www.huaibei.gov.cn/"><img src="{ms:globalskin.url/}/images/chaolianjie_12.jpg"></a>
+	        <a href="http://www.iot-cas.com"><img src="{ms:globalskin.url/}/images/chaolianjie_14.jpg"></a>
+	        <a href="http://www.cas.cn/"><img src="{ms:globalskin.url/}/images/chaolianjie_10.jpg"></a>
+	        <a href="http://www.huaibei.gov.cn/"><img src="{ms:globalskin.url/}/images/chaolianjie_12.jpg"></a>
+	        <a href="http://www.iot-cas.com"><img src="{ms:globalskin.url/}/images/chaolianjie_14.jpg"></a>
+        </div>
+    </div>
+  </div>
+  {ms:include filename=footer.htm/}
+  <script type="text/javascript">
+    $(function () {
+      $("a[rel=group]").fancybox({
+        'transitionIn': 'elastic',
+        'transitionOut': 'elastic',
+        'titlePosition': 'over',
+        'cyclic': true,
+        'titleFormat': function (title, currentArray, currentIndex, currentOpts) {
+          return '<span id="fancybox-title-over">' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+        }
+      });
+    })
+  </script>
+  <script type="text/javascript">
+    $(function () {
+      $(".open-layer").on("click", function () {
+        layer.open({
+          type: 1,
+          title: false,
+          skin: 'pro-layer-detail', //样式类名
+          closeBtn: 1, //不显示关闭按钮
+          anim: 2,
+          shadeClose: true, //开启遮罩关闭
+          content: $(this).next(".pro-layer").html(),
+          success: function (layero, index) {
+            var findH = layero.find(".pro-layer-detail");
+            maxH = findH.find("img").height() - findH.find("h5").outerHeight() - findH.find("p.type").height() - findH.find(".links").outerHeight() - 70;
+            layero.find(".remark").css("max-height", maxH);
+          }
+        });
+      });
+      window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+    });
+  </script>
+  <script type="text/javascript">
+  window.onbeforeunload = function(){
+	    var scrollPos;    
+	    if (typeof window.pageYOffset != 'undefined') {
+	        scrollPos = window.pageYOffset;
+	    }
+	    else if (typeof document.compatMode != 'undefined' &&
+	        document.compatMode != 'BackCompat') {
+	        scrollPos = document.documentElement.scrollTop;
+	    }
+	    else if (typeof document.body != 'undefined') {
+	        scrollPos = document.body.scrollTop;
+	    }
+	    document.cookie="scrollTop="+scrollPos; //存储滚动条位置到cookies中
+	}
+
+	window.onload = function()
+	{ 
+	    if(document.cookie.match(/scrollTop=([^;]+)(;|$)/)!=null){
+	        var arr=document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
+	        document.documentElement.scrollTop=parseInt(arr[1]);
+	        document.body.scrollTop=parseInt(arr[1]);
+	    }
+	}
+  </script>
+  <script>
+  $('#tab_title p').hover(function () {
+	  	var i = $(this).index();
+		$(this).addClass('active-tab-gao').siblings().removeClass('active-tab-gao');
+		$('#tab_news div').eq(i).show().siblings().hide();//animate({width:'742.797px'}).  .animate({width:'0px'})
+	});
+  $('#tab_jishu_title p').hover(function () {
+	  	var iJ = $(this).index();
+		$(this).addClass('active-tab-gao').siblings().removeClass('active-tab-gao');
+		$('#tab_jishu .jishu-content-index').eq(iJ).show().siblings().hide();
+		console.log($('#tab_jishu .jishu-content-index'))
+	});
+  </script>
+</body>
+
+</html>

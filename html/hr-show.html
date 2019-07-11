@@ -1,0 +1,98 @@
+﻿<!--* 人力资源-  {ms:global.url/}/146/153/index.html*/-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+{ms:include filename=head-file.htm/}
+<body>
+	{ms:include filename=head.htm/}
+	<!-- 内页banner -->
+	<div class="s-banner-div">
+		<img class="s-banner" src="{ms:globalskin.url/}/images/hrbanner.png" />
+	</div>
+	<!-- /内页banner -->
+	<div class="back-color">
+		<div class="container">
+			<div class="con-left fl">
+				<div class="subcat">
+					<a href="{ms:global.url/}/146/index.html">
+						<div class="sub-tit">
+							<h3>人力资源</h3>
+							<span class="ar"></span>
+						</div>
+					</a>
+					<ul>
+						{ms:channel type=son typeid=146 class=detailMainLeftMenu_cur}
+						<li><i></i> <a href="[field.typelink/]" class="[field.class/]">[field.typetitle/]</a>
+						</li> {/ms:channel}
+					</ul>
+				</div>
+			</div>
+		<div class="con-right fl con-right-all-gao">
+			<div class="current">
+				<div class="curr-left fl">
+					<h3>{ms:field.typetitle type=son/}</h3>
+				</div>
+				<div class="curr-right fr">
+					<p>
+						您当前的位置： <a class="home" href="{ms:global.host/}">首页</a> <a
+							href="{ms:global.url/}/146/index.html">人力资源</a> <a
+							href="javascript:;">{ms:field.typetitle/}</a>
+					</p>
+				</div>
+			</div>
+			{ms:arclist size=1}
+			<div class="news-content">
+				<div class="content-title">
+					<h1>{ms:field.title/}</h1>
+					<div class="sub-title">
+						<span class="time">日期：[field.date fmt=yyyy-MM-dd/]</span> <span
+							class="type">类型：<a href="[field.typelink/]">[field.typename/]</a></span>
+					</div>
+					<div class="show-keyword pt5">[field.descrip/]</div>
+				</div>
+				<div class="detail">
+					{ms:field.content/}
+					<!--               [field.content/] -->
+				</div>
+				<div class="Pre-Next">
+					<p class="fl page-prev">
+						<span>上一个：</span> <a href="{ms:field.nextlink/}">
+							{ms:field.nexttitle/} </a>
+					</p>
+					<p class="fr page-next">
+						<span>下一个：</span> <a class="a" href="{ms:field.prelink/}">
+							{ms:field.pretitle/} </a>
+					</p>
+					<a class="return" href="[field.typelink/]">返回</a>
+				</div>
+			</div>
+			{/ms:arclist}
+		</div>
+		</div>
+	</div>
+	<div class="hg15"></div>
+	</div>
+	<!-- 页脚 -->
+	{ms:include filename=footer.htm/}
+	<style>
+.detailMainLeftMenu_cur {
+	color: #fff
+}
+</style>
+	<!-- /子菜单 -->
+	<script type="text/javascript">
+		$('.subcate ul li').removeAttr('class')
+		var address = window.location.href
+		if (address.match('/93/94/')) {
+			$('.subcat ul li:eq(0)').attr('class', 'on')
+		} else if (address.match('/93/95/')) {
+			$('.subcat ul li:eq(1)').attr('class', 'on')
+		} else if (address.match('/93/98/')) {
+			$('.subcat ul li:eq(2)').attr('class', 'on')
+		} else if (address.match('/93/97/')) {
+			$('.subcat ul li:eq(3)').attr('class', 'on')
+		} else if (address.match('/93/96/')) {
+			$('.subcat ul li:eq(4)').attr('class', 'on')
+		}
+	</script>
+</body>
+</html>
